@@ -2,10 +2,10 @@
 # <center> Hacktober Fest 2022 For Everyone! </center>
 
 <p align="center">
-   <img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/nischalgautam2/Hacktoberfest2022-for-everyone">
-   <img alt="GitHub forks" src="https://img.shields.io/github/forks/maheshjainckd/Hacktoberfest2022-for-everyone">
-   <img alt="contributors" src="https://img.shields.io/github/contributors/maheshjainckd/Hacktoberfest2022-for-everyone">
-   <img alt="GitHub stars" src="https://img.shields.io/github/stars/maheshjainckd/Hacktoberfest2022-for-everyone">
+   <img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/nischalgautam2/HacktoberFest2022">
+   <img alt="GitHub forks" src="https://img.shields.io/github/forks/nischalgautam2/HacktoberFest2022">
+   <img alt="contributors" src="https://img.shields.io/github/contributors/nischalgautam2/HacktoberFest2022">
+   <img alt="GitHub stars" src="https://img.shields.io/github/stars/nischalgautam2/HacktoberFest2022">
 </p>
 
 # Upload Projects or Different Types of Programs in any Language
