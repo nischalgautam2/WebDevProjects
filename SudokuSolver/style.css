@@ -1,0 +1,86 @@
+body {
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+}
+
+h2 {
+    background-color: rgba(41, 45, 51, 0.696);
+    text-align: center;
+    color: antiquewhite;
+    padding: 20px;
+}
+
+#initialBoard {
+    float: left;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: rgba(246, 247, 248, 0.537);
+    padding: 10pt;
+    border-radius: 8pt;
+}
+
+#answerBoard {
+    margin-right: 10%;
+    float: right;
+    margin-top: 10%;
+    background-color: rgba(246, 247, 248, 0.599);
+    padding: 10pt;
+    border-radius: 8pt;
+}
+
+p{
+    font-size: 20px;
+}
+
+input {
+    font-size: 17px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border: 1px solid rgb(72, 72, 72);
+    width: 40px;
+    height: 40px;
+    border-radius: 8pt;
+    padding: 4pt;
+}
+
+button {
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+#solve_button, #clear_button {
+    background-color: rgba(41, 45, 51, 0.696);
+    color: antiquewhite;
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    #initialBoard {
+        margin-left: 4%;
+        margin-right: 4%;
+        float: none;
+        padding: 4pt;
+        border-radius: 2pt;
+    }
+
+    input {
+        width: 20px;
+        height: 20px;
+        padding: 2pt;
+        border-radius: 2pt;
+    }
+
+    #answerBoard {
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-bottom: 4%;
+        float: none;
+        padding: 4pt;
+        border-radius: 2pt;
+    }
+
+    .answerRow {
+        font-size: 14px;
+    }
+}

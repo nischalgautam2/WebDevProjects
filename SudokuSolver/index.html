@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--META TAGS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku Solver</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <!--Website icon-->
+    <!--Use favicon.io to convert image to icon and copy the code-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <!--BOOTSTRAP CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="text-align: center;">
+    
+    <h2>S U D O K U <br> S O L V E R </h2>
+    
+    
+    <button onclick="initiate()" class = "btn btn-primary" id="solve_button" >S&nbsp;O&nbsp;L&nbsp;V&nbsp;E</button>
+    &nbsp;&nbsp;&nbsp;
+    <button onclick="clearInputBoard()" class = "btn btn-primary" id="clear_button" >C&nbsp;L&nbsp;E&nbsp;A&nbsp;R</button>
+
+    <div id = "initialBoard">
+        <input id = "1" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "2" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "3" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "4" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "5" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "6" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "7" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "8" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "9" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "10" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "11" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "12" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "13" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "14" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "15" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "16" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "17" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "18" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "19" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "20" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "21" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "22" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "23" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "24" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "25" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "26" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "27" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "28" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "29" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "30" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "31" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "32" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "33" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "34" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "35" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "36" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "37" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "38" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "39" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "40" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "41" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "42" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "43" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "44" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "45" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "46" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "47" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "48" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "49" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "50" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "51" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "52" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "53" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "54" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <br>
+        <input id = "55" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "56" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "57" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "58" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "59" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "60" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "61" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "62" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "63" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "64" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "65" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "66" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "67" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "68" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "69" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "70" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "71" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "72" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+        <input id = "73" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "74" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "75" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "76" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "77" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "78" type="number" maxlength="1" max = "9" min = "1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id = "79" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "80" type="number" maxlength="1" max = "9" min = "1">&nbsp;
+        <input id = "81" type="number" maxlength="1" max = "9" min = "1">
+        <br>
+    </div>
+        
+    
+
+    <div id = "answerBoard">
+        <p id = "row 1" class="answerRow"></p>
+        <p id = "row 2" class="answerRow"></p>      
+        <p id = "row 3" class="answerRow"></p>
+        <p id = "row 4" class="answerRow"></p>  
+        <p id = "row 5" class="answerRow"></p>
+        <p id = "row 6" class="answerRow"></p>  
+        <p id = "row 7" class="answerRow"></p>
+        <p id = "row 8" class="answerRow"></p>  
+        <p id = "row 9" class="answerRow"></p>       
+    </div>
+    <script>
+        // initially populating the answer output area
+        const placeHolder = " ? "
+        for (var i = 1; i <= 9; i++){
+            document.getElementById("row " + String(i)).innerHTML = placeHolder +  "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" +  placeHolder + "\xa0\xa0\xa0\xa0\xa0\xa0" + placeHolder
+        }
+    </script>
+    <script src = "js/sudoku.js"></script>
+</body>
+</html>
