@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=New+Tegomin&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    background: url("bg.jpg");
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#Snakegame{
+    position: absolute;
+    top:25px;
+    left: 80px;
+    font-size: 50px;
+    font-weight: bolder;
+    font-display: block;
+    font-family: 'New Tegomin', serif;
+}
+#scoreBox{
+    position: absolute;
+    top:15px;
+    right: 200px;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'New Tegomin', serif;
+}
+#highscoreBox{
+    position: absolute;
+    top:60px;
+    right: 90px;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'New Tegomin', serif;
+}
+#board{
+    background: linear-gradient(rgb(152, 207, 152),rgb(234, 234, 140));
+    width: 90vmin;
+    height: 92vmin;
+    border: 4px solid black;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+}
+
+.head{
+    background:linear-gradient(red,black);
+    border: 2px solid white;
+    border-radius: 10px;;
+
+}
+.snake{
+    background: linear-gradient(purple,black);
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+.food{
+    background: linear-gradient(rgb(169, 54, 54),yellow);
+    border: .25vmin solid black;
+    border-radius: 15px;
+
+}
