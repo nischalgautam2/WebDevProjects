@@ -1,0 +1,154 @@
+
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+
+:root {
+  --color-main: #45529d;
+  --color-hide: #8188ae;
+  --color-hide-dark: #7178a0;
+  --color-add: #34baec;
+  --color-add-dark: #2ca6d2;
+  --color-remove: #b8555e;
+  --color-remove-light: #cb636c;
+  --color-remove-dark: #9a3942;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  color: #222;
+  line-height: 1.5;
+  padding: 0;
+  background: #d5e4ef;
+  margin: 0;
+}
+.wrapper {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 10px 22px -15px #2e397e;
+}
+header {
+  text-align: center;
+  padding: 2.5em 1em;
+  background-color: var(--color-main);
+}
+header h1 {
+  font-size: 2.5em;
+  line-height: 1;
+  color: #fff;
+  margin: 0 0 0.65em;
+}
+.group {
+  display: flex;
+  justify-content: center;
+}
+.list-container {
+  padding: 0.65em 2em 2em;
+}
+ul {
+  font-size: 1.15em;
+  padding: 0;
+  margin: 0 0 1.15em;
+  list-style: none;
+}
+li {
+  padding: 1.15em 0.5em;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px #dedede;
+}
+li:last-child {
+  border: none;
+}
+
+/* Form Controls */
+input:focus,
+button:focus {
+  outline: none;
+}
+label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+input {
+  font-size: 1.15em;
+  width: 70%;
+  padding: 0.5em 1em;
+  border: 1px solid #dcdcdc;
+}
+input:focus {
+  border: solid 3px var(--color-add);
+}
+button {
+  color: white;
+  font-size: 1em;
+  padding: 1em;
+  background-color: var(--color-add);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+button:hover {
+  background-color: var(--color-add-dark);
+}
+button:focus {
+  outline: solid 3px #fff;
+  outline-offset: -3px;
+}
+.btn-toggle {
+  background-color: var(--color-hide);
+}
+.btn-toggle:hover {
+  background-color: var(--color-hide-dark);
+}
+.btn-remove {
+  color: white;
+  padding: 0.85em 1em;
+  background-color: var(--color-remove);
+}
+li input[type="checkbox"],
+li button  {
+  width: auto;
+  margin-left: auto;
+}
+li button {
+  font-size: 0.9rem;
+  padding: 0.65em 0.85em;
+  background-color: var(--color-remove);
+}
+.btn-remove:focus,
+li button:focus {
+  outline-color:  var(--color-remove-dark);
+}
+.btn-remove:hover,
+li button:hover {
+  background-color:  var(--color-remove-light);
+}
+
+/* Additional styles */
+.selected {
+  color:rgba(0, 0, 0, 0.4);
+  transition: color 0.2s ease-in-out;
+}
+.grow {
+  font-size: 4.8rem;
+  transition: font-size 0.8s ease-in-out;
+}
+@media screen and (min-width: 720px) { 
+  .wrapper {
+    max-width: 1000px;
+    width: 60%;
+  }
+  input {
+    width: 50%;
+  }
+}
