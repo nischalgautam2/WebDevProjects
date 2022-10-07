@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tacos By Roscoe is not a real restaurant, as far as I know. This is a demo by Anwar Montasir for a Team Treehouse lesson on accessible forms.">
+    <title>Tacos By Roscoe | Delivery Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,900;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bab41b580f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <div class="container">
+                <img src="images/taco-emoji.png" alt="Tacos By Roscoe taco emoji logo" id="logo-img">
+                <span id="logo-text">Tacos By Roscoe</span>
+            </div> 
+        </div>
+        <nav class="container">
+            <ul class="nav-flex">
+                <li><a href="index.html">Delivery</a></li>
+                <li><a>Billing</a></li>
+                <li><a>Review</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div id="summary">
+                <i class="fas fa-utensils fa-3x"></i>
+                <div id="summary-text">
+                    <p>Delivery by 7pm, April 13, 2020</p>
+                    <p>6 items, <span class="check"></span> $31.44</p>
+                </div>
+            </div>
+            
+            <form>
+                <fieldset>
+                    <legend>Delivery Information</legend>
+                    <p class="hint">* - required field</p>
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="user-name">
+                    <label for="email" class="error-text">Email Address * <i class="fas fa-exclamation-triangle"></i></label>
+                    <input type="email" id="email" name="user-email" class="error-input">
+                    <p class="hint error-text">Email address must contain a single @.</p>
+                    <label for="address1">Street Address *</label>
+                    <input type="text" id="address1" name="user-address1">
+                    <label for="address2">Apartment/Office Number</label>
+                    <input type="text" id="address2" name="user-address2">
+                    <label for="zip" class="error-text">Zip Code * <i class="fas fa-exclamation-triangle"></i></label>
+                    <input type="text" id="zip" name="user-zip"  class="error-input">
+                    <p class="hint error-text">Please enter a Zip Code.</p>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="user-phone">
+                    <p class="hint">No phone? Include alternate contact below.</p>
+                    <label for="delivery-instructions">Delivery Instructions</label>
+                    <textarea id="delivery-instructions" name="user-delivery-instructions"></textarea>
+                    <button type="submit">Continue to Billing</button>
+                </fieldset>
+            </form>
+            
+        </div>
+    </main>
+</body>
+</html>
