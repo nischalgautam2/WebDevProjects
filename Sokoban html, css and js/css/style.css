@@ -1,0 +1,43 @@
+body{
+    background-color: black;
+    font-family: cursive;
+}
+
+canvas{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.message{
+    height: 100px;
+    width: 400px;
+    border-radius: 30px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.message div{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.message div button{
+    flex-basis: 30%;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    font-family: cursive;
+}
+
+.message div div{
+    flex-basis: 20%;
+}
