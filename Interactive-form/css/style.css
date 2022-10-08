@@ -1,0 +1,638 @@
+/* ================================= 
+  Base and header styles
+==================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono');
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+	width: 100%;
+	min-height: 100%;
+}
+
+body,
+input,
+button {
+	font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: rgba(218, 174, 81, 0.1);
+}
+
+header {
+	text-align: center;
+	color: rgb(255, 255, 255);
+	width: 100%;
+	padding: 10px 0;
+	background: linear-gradient(90deg, rgba(213, 51, 105, 1) 0%, rgba(218, 174, 81, 1) 100%);
+}
+
+.header-container {
+	max-width: 800px;
+	margin: 10px auto;
+}
+
+h1 {
+	font-size: 2.5em;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.65);
+	margin: 0;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ================================= 
+  Form styles
+==================================== */
+
+form {
+	display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+	border-radius: 3px;
+}
+
+fieldset {
+  width: calc(100% - 10px);
+  margin: 35px auto 10px;
+  border: none;
+}
+
+legend,
+button {
+	font-size: 1.25em;	
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease-out;
+}
+
+input[type="text"],
+input[type="email"],
+legend {
+	width: 100%;
+}
+
+label {
+  display: block;
+  color: rgb(0, 0, 0);
+  margin-top: 27px;
+  margin-bottom: 0;
+  transition: all 0.3s ease-out;
+}
+
+input,
+select {
+	margin-bottom: 1.125em;	
+}
+
+input, 
+select, 
+option {
+  font-family: 'roboto', sans-serif;
+  transition: all 0.3s ease-out;
+}
+
+input {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.7);
+	font-weight: 500;
+	padding: .95em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: rgb(255, 253, 249);
+	border: 1px solid rgba(36, 28, 21, 0.2);
+	border-radius: 2px;
+	outline: none;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color:  rgb(9, 73, 250);
+}
+
+input:-webkit-autofill {
+  border: 1px solid rgba(36, 28, 21, 0.2);
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 253, 249) inset;
+  box-shadow: 0 0 0px 1000px rgb(255, 253, 249) inset;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+}
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+select {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	font-size: 1em;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: .95em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+	padding-right: calc(4% + 0.95em);
+  background: url(../img/caret.png) calc(100% - 7px) 50% no-repeat rgb(255, 253, 249);
+	background-size: 12px auto;
+	border: 1px solid rgba(36, 28, 21, 0.2);
+	border-radius: 2px;
+	outline: none;
+  cursor: pointer;
+  transition: none;
+}
+
+select:focus {
+  background: url(../img/caret.png) calc(100% - 7px) 50% no-repeat rgba(255, 255, 255, 1) !important;
+  background-size: 12px auto !important;
+  border-color:  rgb(9, 73, 250);
+}
+
+select:disabled {
+  cursor: not-allowed;
+  background-color: rgba(197, 163, 175, 0.1);
+}
+
+input.error,
+select.error {
+	background: rgb(242, 112, 156, 0.1);
+	border: 1px solid rgb(242, 112, 156) ;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px 0 transparent;
+  letter-spacing: 0.1rem;
+  color: rgb(255, 255, 255);
+  width: calc(100% - 40px);
+  margin: 25px auto;
+  padding: 10px 25px;
+	background: rgb(213, 51, 105);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  border-right: 1px solid rgba(36, 28, 21, 0.2);
+  border-bottom: 1px solid rgba(36, 28, 21, 0.3);
+  box-shadow: none;
+	transition: all 0.3s ease-out;
+}
+
+button:hover {
+  text-shadow: 1px 1px 0 rgb(25, 25, 25, 0.9);
+  background: rgb(218, 174, 81);
+  border: 1px solid rgba(213, 51, 105, 0.3);
+  box-shadow: 1px 1px 25px rgba(213, 51, 105, 0.5) inset, 3px 3px 10px rgba(50, 50, 50, 0.3);
+}
+
+.hint {
+  display: none;
+  color: red;
+  margin: 0;
+  transition: all 0.3s ease-out;
+}
+
+.form-hint {
+  color: rgb(0, 0, 0);
+  margin-bottom: 0;
+  margin-left: 17px;
+}
+
+.asterisk {
+  vertical-align: sub;
+}
+
+.valid {
+  position: relative;
+}
+
+.not-valid {
+  position: relative;
+  color: red;
+}
+
+.not-valid .error-border {
+  border: 1px solid red;
+}
+
+.not-valid legend {
+  color: red;
+}
+
+.valid::after {
+  content: ' ';
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/valid.svg');
+  background-size: 25px;
+  transition: all 0.3s ease-out;
+}
+
+.not-valid::after {
+  content: ' ';
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/not-valid.svg');
+  background-size: 25px;
+  transition: all 0.3s ease-out;
+}
+
+.activities.valid::after,
+.activities.not-valid::after {
+  top: 5px;
+}
+/* ================================= 
+  Basic info and t shirt styles
+==================================== */
+
+.basic-info-and-shirt-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
+.basic-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.shirt-div-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.shirt-sizes {
+  width: 25%;
+  min-width: 75px;
+}
+
+.shirt-designs {
+  width: 70%;
+  min-width: 210px;
+}
+
+.shirt-colors {
+  width: 100%;
+}
+
+/* ================================= 
+  Activity section styles
+==================================== */
+
+.activities {
+  position: relative;
+  max-width: calc(100% - 30px);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin: 35px 15px 0px;
+}
+
+.activities-box {
+  font-family: 'roboto', sans-serif;
+  max-width: 100%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-out;
+}
+
+.activities legend {
+  margin-bottom: 15px;
+}
+
+.activities label {
+  cursor: pointer;
+  position: relative;
+  background: rgba(218, 174, 81, 0.1);
+  background: rgb(255, 253, 249);
+  padding: 15px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(36, 28, 21, 0.2);
+  transition: all 0.3s ease-out;
+}
+
+.activities label:nth-of-type(1) {
+  height: 107px;
+  margin-top: 0;
+}
+
+.activities label:last-child {
+  margin-bottom: 0;
+}
+
+.activities label input {
+  margin: 7px auto 7px 7px;
+}
+
+.activities label span:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: bolder;
+  padding-left: 7px;
+}
+
+.activities label span:nth-of-type(2),
+.activities label span:nth-of-type(3) {
+  font-size: 0.9rem;
+  margin: 7px auto;
+  padding-left: 30px;
+}
+
+.activities label span:nth-of-type(2) {
+  display: block;
+  margin-top: 30px;
+}
+
+.activity-cost {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: bolder;
+}
+
+.activity-img {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.npm-img {
+  top: 5px;
+  right: 12px;
+  width: 50px;
+}
+
+.node-img {
+  top: 15px;
+}
+
+.express-img {
+  top: 20px;
+}
+
+.activities-cost {
+  color: black;
+  font-size: 1.5rem;
+  margin-right: -10px;
+  margin-bottom: 5px;
+}
+
+.activities-hint {
+  margin-top: 10px;
+}
+
+/* ================================= 
+  Payment section styles
+==================================== */
+
+.payment-methods {
+  margin-top: 55px;
+}
+
+.payment-method-box label {
+  margin-top: 20px;
+}
+
+.credit-card {
+  margin-bottom: 25px;
+}
+
+.paypal,
+.bitcoin {
+  margin: 20px auto 10px auto;
+  padding: 0 15px;
+  background: rgb(255, 253, 249);
+  border-radius: 3px;
+  border: 1px solid rgba(36, 28, 21, 0.2);
+}
+
+.paypal h3,
+.bitcoin h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.paypal p,
+.bitcoin p {
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.credit-card,
+.paypal,
+.bitcoin {
+  transition: all 0.3s ease-out;
+}
+
+/* ================================= 
+  Helper class styles
+==================================== */
+
+.focus {
+  background: rgba(255, 255, 255, 1) !important;
+  border-color:  rgb(9, 73, 250) !important;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  background: rgba(197, 163, 175, 0.1) !important;
+}
+
+/* ================================= 
+  Media queries styles
+==================================== */
+
+@media (min-width: 768px) {
+
+  header {
+    text-align: left;
+    padding: 25px 0;
+  }
+
+  .header-container {
+    padding-left: 15px;
+  }
+
+  form {
+    padding-top: 25px;
+  }
+
+  button {
+    text-align: left;
+    width: 155px;
+    height: 50px;
+    margin: 0px 0 100px 15px;
+  }
+
+  /* ================================= 
+    768px - Basic info and t shirt section styles
+  ==================================== */
+
+  .basic-info-and-shirt-box {
+    position: relative;
+    padding: 15px;
+  }
+
+  .basic-info-and-shirt-box fieldset {
+    margin: 10px 0;
+  }
+
+  .other-job-role {
+    position: absolute;
+    right: 10px;
+    bottom: 25px;
+    max-width: 50%;
+  }
+
+  .basic-info{
+    max-width: 350px;
+    padding: 0;
+  }
+
+  .shirts {
+    max-width: 325px;
+    padding: 0;
+  }
+
+  /* ================================= 
+    768px - Activity section styles
+  ==================================== */
+  .activities {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .activities-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    transition: all 0.3s;
+  }
+
+  .activities label {
+    width: 49%;
+    margin: 8px auto;
+  }
+
+  .activities label:first-of-type {
+    width: 100%;
+  }
+
+  .activities label:nth-of-type(even) {
+    margin-left: 0;
+  }
+
+  .activities label:nth-of-type(odd) {
+    margin-right: 0;
+  }
+
+  .activities label:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+
+  .activities-cost {
+    position: absolute;
+    font-weight: bolder;
+    right: 15px;
+  }
+
+  /* ================================= 
+    768px - Payment section styles
+  ==================================== */
+
+  .payment-methods {
+    position: relative;
+    padding: 10px;
+  }
+
+  .payment-method-box {
+    width: 375px;
+  }
+
+  .credit-card-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .num-box {
+    width: 375px;
+  }
+
+  .zip-box {
+    width: 190px;
+  }
+
+  .cvv-box {
+    width: 160px;
+  }
+
+  .expiration-box {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 47%;
+  }
+
+  /* Mozilla specific style for expiration date container to accomplish cross browser styles */
+  @-moz-document url-prefix() {
+    .expiration-box {
+      top: 30px;
+    }
+  }
+
+  .expiration-box label {
+    margin-top: 0;
+  }
+
+  .month-box {
+    width: 190px;
+  }
+
+  .year-box {
+    width: 160px;
+  }
+}
