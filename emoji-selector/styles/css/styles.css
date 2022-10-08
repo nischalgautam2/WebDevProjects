@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.chat-container {
+  height: 100%;
+}
+
+.chat-body {
+  background-color: #eee;
+  height: calc(100vh - 206px);
+}
+
+.chat-utilities {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 0.5rem;
+  padding: 1.5rem 1rem 1rem;
+  height: 206px;
+}
+.chat-utilities .utility-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.chat-utilities .utility-container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #eee;
+  position: relative;
+}
+.chat-utilities .utility-container ul li {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  overflow: hidden;
+}
+.chat-utilities .utility-container ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.chat-utilities .utility-container ul li img {
+  height: 100%;
+  opacity: 0.8;
+}
+.chat-utilities .utility-container ul li.emoji-selector {
+  background-color: white;
+  border-radius: 1rem;
+  cursor: default;
+  display: block;
+  padding: 0;
+  border: 1px solid #eee;
+  position: absolute;
+  bottom: 0%;
+  width: 325px;
+  height: 350px;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  overflow: auto;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+.chat-utilities .utility-container ul li.emoji-selector.active {
+  bottom: 110%;
+  opacity: 1;
+  pointer-events: all;
+}
+.chat-utilities .utility-container ul li.emoji-selector .input-container {
+  padding: 1rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.chat-utilities .utility-container ul li.emoji-selector .input-container input {
+  border-radius: 25px;
+  border: 1px solid #eee;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+.chat-utilities .utility-container ul li.emoji-selector ul.emoji-list {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 1rem 1rem;
+  border-radius: 0;
+}
+.chat-utilities .utility-container ul li.emoji-selector ul.emoji-list li {
+  height: 35px;
+  width: 35px;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+}
+.chat-utilities form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+.chat-utilities form input, .chat-utilities form button {
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  height: 50px;
+}
+.chat-utilities form input {
+  background-color: transparent;
+  width: 100%;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  color: rgb(59, 69, 84);
+}
+.chat-utilities form button {
+  background-color: rgb(111, 109, 226);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0 2rem;
+  color: white;
+}
+.chat-utilities form button img {
+  filter: invert(1);
+  margin-left: 1rem;
+  width: 1.2rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

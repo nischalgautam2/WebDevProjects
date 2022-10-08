@@ -1,0 +1,180 @@
+$chat-util-height: 206px;
+$icon-size: 50px;
+$accent: rgb(111, 109, 226);
+
+@mixin flex($direction, $wrapping, $justify, $align) {
+    @content;
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrapping;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin center-flex {
+    @content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bg($color) {
+    @content;
+    background-color: $color;
+}
+
+@mixin radius($radius) {
+    @content;
+    border-radius: $radius;
+}
+
+@mixin transition {
+    @content;
+    transition: all .3s ease;
+}
+
+@mixin same-size($size) {
+    @content;
+    height: $size;
+    width: $size;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.chat-container {
+    height: 100%;
+}
+
+.chat-body {
+    @include bg(#eee);
+    height: calc(100vh - $chat-util-height);
+}
+
+.chat-utilities {
+    @include flex(column, nowrap, flex-start, flex-start);
+    @include bg(white);
+    border-top: 1px solid rgba(black, 0.05);
+    gap: .5rem;
+    padding: 1.5rem 1rem 1rem;
+    height: $chat-util-height;
+    .utility-container {
+        @include flex(row, nowrap, flex-start, center);
+        gap: .5rem;
+        ul {
+            @include flex(row, nowrap, flex-start, center);
+            @include radius(25px);
+            @include bg(#eee);
+            position: relative;
+            li {
+                @include same-size($icon-size);
+                @include radius(50%);
+                @include transition();
+                @include flex(row, nowrap, center, center);
+                cursor: pointer;
+                padding: 1rem;
+                overflow: hidden;
+                &:hover {
+                    @include bg(rgba(black, 0.1));
+                }
+                img {
+                    height: 100%;
+                    opacity: 0.8;
+                }
+                &.emoji-selector {
+                    @include bg(white);
+                    @include radius(1rem);
+                    cursor: default;
+                    display: block;
+                    padding: 0;
+                    border: 1px solid #eee;
+                    position: absolute;
+                    bottom: 0%;
+                    width: 325px;
+                    height: 350px;
+                    z-index: 5;
+                    opacity: 0;
+                    pointer-events: none;
+                    overflow: auto;
+                    transition: bottom 0.3s ease, opacity 0.3s ease;
+                    &.active {
+                        bottom: 110%;
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                    .input-container {
+                        padding: 1rem;
+                        @include bg(white);
+                        position: sticky;
+                        top: 0;
+                        z-index: 5;
+                        input {
+                            border-radius: 25px;
+                            border: 1px solid #eee;
+                            width: 100%;
+                            padding: .5rem 1rem;
+                            outline: none;
+                        }
+                    }
+                    ul.emoji-list {
+                        @include bg(white);
+                        @include flex(row, wrap, flex-start, flex-start);
+                        padding: 0 1rem 1rem;
+                        border-radius: 0;
+                        li {
+                            @include same-size(35px);
+                            @include radius(.25rem);
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    form {
+        @include flex(row, nowrap, flex-start, center);
+        @include bg(#eee);
+        @include radius(50px);
+        overflow: hidden;
+        width: 100%;
+        input, button {
+            outline: none;
+            border: none;
+            padding: .5rem;
+            height: 50px;
+        }
+        input {
+            @include bg(transparent);
+            width: 100%;
+            padding-left: 1.5rem;
+            font-size: 1.2rem;
+            color: rgb(59, 69, 84);
+        }
+        button {
+            @include bg($accent);
+            @include radius(25px);
+            @include flex(row, nowrap, center, center);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0 2rem;
+            color: white;
+            img {
+                filter: invert(1);
+                margin-left: 1rem;
+                width: 1.2rem;
+            }
+        }
+    }
+}

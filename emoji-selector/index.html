@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/styles.css">
+    <title>Emoji Selector</title>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-body"></div>
+        <div class="chat-utilities">
+
+            <!-- top utility buttons -->
+            <div class="utility-container">
+                <ul class="utility-group">
+                    <li><img src="./icons/bold-solid.svg" alt=""></li>
+                    <li><img src="./icons/italic-solid.svg" alt=""></li>
+                    <li><img src="./icons/strikethrough-solid.svg" alt=""></li>
+                </ul>
+                <ul class="utility-group">
+                    <li><img src="./icons/link-solid.svg" alt=""></li>
+                </ul>
+                <ul class="utility-group">
+                    <li><img src="./icons/list-solid.svg" alt=""></li>
+                    <li><img src="./icons/list-ol-solid.svg" alt=""></li>
+                </ul>
+                <ul class="utility-group">
+                    <li><img src="./icons/code-solid.svg" alt=""></li>
+                </ul>
+            </div>
+
+            <!-- chat form -->
+            <form action="">
+                <input type="text" name="" id="">
+                <button type="submit">Send <img src="./icons/paper-plane-solid.svg" alt=""></button>
+            </form>
+
+            <!-- bottom utility buttons -->
+            <div class="utility-container"> 
+                <ul class="utility-group">
+                    <li><img src="./icons/plus-solid.svg" alt=""></li>
+                </ul>
+                <ul class="utility-group">
+                    <li><img src="./icons/video-solid.svg" alt=""></li>
+                    <li><img src="./icons/microphone-solid.svg" alt=""></li>
+                </ul>
+                <ul class="utility-group">
+                    <li class="emoji-selector" id="emojiSelector">
+                        <div class="input-container">
+                            <input id="emojiSearch" type="text" name="" id="" placeholder="Search...">
+                        </div>
+                        <ul id="emojiList" class="emoji-list">
+                            
+                        </ul>
+                    </li>
+                    <li id="emojiSelectorIcon"><img src="./icons/face-smile-regular.svg" alt=""></li>
+                    <li><img src="./icons/at-solid.svg" alt=""></li>
+                    <li><img src="./icons/font-solid.svg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
