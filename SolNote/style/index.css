@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+h2 {
+    background-color: rgba(41, 45, 51, 0.696);
+    text-align: center;
+    color: antiquewhite;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.card {
+    background: #000000c2;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 60%;
+    max-height: 40%;
+    margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    resize: horizontal;
+}
+  
+button:hover {
+    background: #7c7c7c6b;
+    width: 65px;
+    height: 65px;
+    transition: 1s;
+}
+
+img:hover {
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+}
+
+
+  
